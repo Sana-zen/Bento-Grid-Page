@@ -9,7 +9,7 @@
 
 /* Italic (all weights) */
 @font-face {
-  font-family: "DMSansItalic";
+  font-family: "DMSans";
   src: url("./assets/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf")
     format("truetype");
   font-weight: 100 900;
@@ -40,14 +40,13 @@
   /* <---Font Sizes--->  */
 
   --fs-x-lg: 3rem;
-  --fs-lg: 2rem;
-  --fs-mid: 1.6rem;
-  --fs-base: 1.1rem;
-  --fs-small: 0.9rem;
+  --fs-lg: 2.5rem;
+  --fs-mid: 2rem;
+  --fs-base: 1.6rem;
+  --fs-small: 1.1rem;
 
   /* <---font family---> */
   --ff-DMSans: "DMSans", sans-serif;
-  --ffDMSansItalic: "DMSansItalic", sans-serif;
 }
 
 body {
@@ -63,7 +62,6 @@ body {
   flex-direction: column;
   gap: 2rem;
   margin-block: 2rem;
-  overflow: hidden;
 }
 
 .card {
@@ -75,6 +73,7 @@ body {
   align-items: center;
   box-shadow: 0 2px 4px rgb(208, 206, 206);
   transition: transform 0.3s ease-in;
+  padding: 1.5rem;
 }
 
 .card:hover {
@@ -84,12 +83,13 @@ body {
 
 
 /* ~-~-~-~First Card Styling~-~-~-~  */
-.card-review {
+.card-review,
+.card-followers {
   background-color: var(--Purple-500);
-  padding: 2rem;
 }
 
-.card-review__title {
+.card-review__title,
+.card-audience__title {
   font-size: clamp(1.6rem, 5vw, var(--fs-x-lg));
   color: var(--White);
   text-align: center;
@@ -102,7 +102,7 @@ body {
 }
 
 .card-review__italic {
-  font-family: var(--ffDMSansItalic);
+  font-style: italic;
 }
 
 .card-review__stars {
@@ -112,14 +112,14 @@ body {
 
 .card-review__stat {
   color: var(--Purple-100);
-  font-size: clamp(0.95rem, 5vw, var(--fs-base));
+  font-size: clamp(0.95rem, 5vw, var(--fs-small));
   margin-block: 0.3rem;
 }
 
 /* ~-~-~Second Card Styling~-~-~-~  */
 
-.card-profile {
-  padding: 1rem;
+.card-profile,
+.card-audience {
   background-color: var(--White);
 }
 
@@ -134,18 +134,22 @@ body {
   font-size: clamp(1.2rem, 5vw, var(--fs-mid));
   line-height: 1;
   margin-top: 0.5rem;
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: -1px;
 }
 
 /* ~-~-~Third Card Styling~-~-~-~  */
 
-.card-schedule {
-  padding: 1rem 0 0 1rem;
+.card-schedule,
+.card-ai {
+  padding-bottom: 0;
   background-color: var(--Yellow-500);
 }
 
-.card-schedule__todo {
-  overflow: hidden;
+.card-schedule__todo,
+.card-ai__content,
+.card-post__button,
+.card-followers__illustration {
   margin-top: 0.8rem;
   max-width: 70%;
   display: flex;
@@ -156,7 +160,7 @@ body {
 
 .card-stats {
   background-color: var(--Purple-100);
-  padding: 1.5rem 1rem;
+  padding-block: 1rem;
 }
 
 .card-stats__illustration {
@@ -165,9 +169,7 @@ body {
 }
 
 .card-stats__description {
-  font-size: clamp(0.95rem, 5vw, var(--fs-base));
   color: var(--Black);
-  font-weight: 500;
   max-width: 23ch;
   text-align: center;
   line-height: 1.2;
@@ -176,17 +178,8 @@ body {
 
 /* ~-~-~Fifth Card Styling~-~-~-~  */
 
-.card-followers {
-  background-color: var(--Purple-500);
-  padding: 1.5rem;
-}
-
-.card-followers__illustration {
-  max-width: 60%;
-}
-
 .card-followers__title {
-  font-size: clamp(1.4rem, 5vw, var(--fs-lg));
+  font-size: clamp(1.4rem, 5vw, var(--fs-mid));
   color: var(--White);
   text-align: center;
   font-weight: 500;
@@ -198,19 +191,16 @@ body {
 /* ~-~-~Sixth Card Styling~-~-~-~  */
 
 .card-audience {
-  padding: 1.5rem;
   align-items: flex-start;
-  background-color: var(--White);
 }
 
 .card-audience__title {
-  font-size: clamp(1.6rem, 5vw, var(--fs-x-lg));
   color: var(--Black);
-  font-weight: 500;
 }
 
+.card-stats__description,
 .card-audience__description {
-  font-size: clamp(0.95rem, 5vw, var(--fs-base));
+  font-size: clamp(0.95rem, 5vw, var(--fs-small));
   color: var(--Black);
   font-weight: 500;
 }
@@ -228,8 +218,7 @@ body {
 }
 
 .card-post__title {
-  font-size: clamp(1.4rem, 5vw, var(--fs-lg));
-  font-weight: 700;
+     letter-spacing: -2px;
 }
 
 .card-post__highlight {
@@ -237,31 +226,14 @@ body {
   color: var(--Purple-500);
 }
 
-.card-post__button {
-  margin-top: 1.5rem;
-  align-self: flex-start;
-  max-width: 60%;
-}
-
 /* ~-~-~Eighth Card Styling~-~-~-~  */
 
-.card-ai {
-  background-color: var(--Yellow-500);
-  padding: 1.5rem;
-}
-
+.card-post__title,
 .card-ai__title {
- font-size: clamp(1.4rem, 5vw, var(--fs-lg));
-  line-height: 1;
+  font-size: clamp(1.4rem, 5vw, var(--fs-lg));
   font-weight: 600;
+    line-height: 1;
 }
-
-.card-ai__content {
-  margin-top: 1rem;
-  max-width: 70%;
-  align-self: flex-start;
-}
-
 
 .attribution {
   font-size: clamp(0.95rem, 5vw, var(--fs-base));
