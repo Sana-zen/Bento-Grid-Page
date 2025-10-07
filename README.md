@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor solution URL](https://www.frontendmentor.io/solutions/bento-grid-solution-c1NXe17HOE)
+- Live Site URL: [live site URL](https://sana-zen.github.io/Bento-Grid-Page/)
 
 ## My process
 
